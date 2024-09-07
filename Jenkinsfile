@@ -15,8 +15,8 @@ pipeline {
             when {
                 expression {
                     // Ensure the 'Test' stage was successful
-                    currentBuild.currentResult == 'SUCCESS'
-                }
+                    currentBuild.currentResult == 'SUCCESS'[
+                }]
             }
             steps {
                 script {
