@@ -19,11 +19,11 @@ This repository is a collection of projects I've worked on as part of my journey
 ### 1. Kubernetes Deployment of Travel Memory Application
 **Description**: The Travel Memory Application is a web-based platform built using the MERN stack (MongoDB, Express, React, Node.js). This application allows users to create, share, and explore travel memories through photos, descriptions, and locations. The application features a responsive and intuitive UI, making it accessible across various devices.
 
-![alt text](READMEFile_Images\image.png)
+![alt text](READMEFile_Images/image.png)
 
 **Problem Statement**: Deploying the Travel Memory Application on a scalable and highly available platform is essential to ensure that it can handle traffic fluctuations and provide a reliable user experience. Kubernetes (K8s) was chosen for this purpose due to its robust orchestration capabilities, enabling seamless deployment, scaling, and management of containerized applications.
 
-![alt text](READMEFile_Images\image-1.png)
+![alt text](READMEFile_Images/image-1.png)
 
 **Objective**: The goal of this project is to deploy the Travel Memory Application on a Kubernetes cluster, ensuring scalability, resilience, and security. The deployment includes setting up the necessary Kubernetes resources such as Deployments, Services, ConfigMaps, Secrets, Persistent Volumes, and Ingress.
 
@@ -40,11 +40,11 @@ This repository is a collection of projects I've worked on as part of my journey
 
 **Problem Statement**: Deploying applications in a consistent and reproducible way is critical in modern DevOps practices. Helm, the package manager for Kubernetes, simplifies this by allowing applications to be defined as charts, which can be easily shared and deployed across different environments.
 
-![alt text](READMEFile_Images\image-2.png)
+![alt text](READMEFile_Images/image-2.png)
 
 **Objective**: The goal of this project is to deploy the MERN application using Helm on a Kubernetes cluster. The project covers the creation of a Helm chart, deploying it to a Kubernetes cluster, setting up a Helm repository, and managing application updates.
 
-![alt text](READMEFile_Images\image-3.png)
+![alt text](READMEFile_Images/image-3.png)
 
 **Key Learnings**:
   - Creating a Helm chart from scratch.
@@ -60,11 +60,11 @@ This repository is a collection of projects I've worked on as part of my journey
 
 **Objective**: The goal of this cicd pipeline is to automate the build and deployment process, ensuring consistency and efficiency.
 
-![alt text](READMEFile_Images\image-7.png)
-![alt text](READMEFile_Images\image-6.png)
-![alt text](READMEFile_Images\image-4.png)
-![alt text](READMEFile_Images\image-5.png)
-![alt text](READMEFile_Images\image-8.png)
+![alt text](READMEFile_Images/image-7.png)
+![alt text](READMEFile_Images/image-6.png)
+![alt text](READMEFile_Images/image-4.png)
+![alt text](READMEFile_Images/image-5.png)
+![alt text](READMEFile_Images/image-8.png)
 
 ## Tools and Technologies
 
