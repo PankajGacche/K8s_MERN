@@ -1,0 +1,18 @@
+app:
+  mongodb: mongodb
+  backend: travelmemorybackend
+  frontend: travelmemoryfrontend
+  dbnamespace: database
+  backendnamespace: backend
+  frontendnamespace: frontend
+  replicaCount: 1
+  image:
+    mongodbrepository: mongo
+    backendrepository: yashbbhatt/travel_memory_backend
+    frontendrepository: prashantdey/travelmemory
+    tag: latest
+    frontendtag: fe 
+  mongodbcontainerPort: 27017
+  backendcontainerPort: 3001
+  frontendcontainerPort: 3000
+  

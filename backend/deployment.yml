@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travelmemorybackend
+  namespace: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: TravelMemory-backend
+  template:
+    metadata:
+      labels:
+        app: TravelMemory-backend
+    spec:
+      containers:
+      - name: travelmemorybackend
+        image: yashbbhatt/travel_memory_backend:latest
+        env:
+        - name: MONGO_URI
+          valueFrom: 
+            secretKeyRef:
+              name: backend-secret
+              key: MONGO_URI
+        - name: PORT
+          value: "3001"
+        ports:
+        - containerPort: 3001

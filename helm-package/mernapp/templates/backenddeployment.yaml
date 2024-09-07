@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.app.backend }}
+  namespace: {{ .Values.app.backendnamespace }}
+spec:
+  replicas: {{ .Values.app.replicaCount  }}
+  selector:
+    matchLabels:
+      app: {{ .Values.app.backend }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.backend }}
+    spec:
+      containers:
+      - name: {{ .Values.app.backend }}
+        image: {{ .Values.app.image.backendrepository }}:{{ .Values.app.image.tag }}
+        env:
+        - name: MONGO_URI
+          valueFrom: 
+            secretKeyRef:
+              name: backend-secrets
+              key: MONGO_URI
+        - name: PORT
+          value: {{ .Values.app.image.backendrepository }}
+        ports:
+        - containerPort: {{ .Values.app.backendcontainerPort }}

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.app.frontend }}
+  namespace: {{ .Values.app.frontendnamespace }}
+spec:
+  replicas: {{ .Values.app.replicaCount  }}
+  selector:
+    matchLabels:
+      app:  {{ .Values.app.frontend }}
+  template:
+    metadata:
+      labels:
+        app:  {{ .Values.app.frontend }}
+    spec:
+      containers:
+      - name:  {{ .Values.app.frontend }}
+        image: {{ .Values.app.image.frontendrepository }}:{{ .Values.app.image.frontendtag }}
+        env:
+        - name: REACT_APP_BACKEND_URL
+          valueFrom: 
+            configMapKeyRef:
+              name: travelmemoryfrontend-config
+              key: REACT_APP_BACKEND_URL
+        ports:
+        - containerPort: {{ .Values.app.frontendcontainerPort }}
+

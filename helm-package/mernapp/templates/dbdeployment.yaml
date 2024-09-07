@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.app.mongodb }}-deployment
+  namespace: {{ .Values.app.dbnamespace }}
+spec:
+  replicas: {{ .Values.app.replicaCount  }}
+  selector:
+    matchLabels:
+      app: {{ .Values.app.mongodb }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.mongodb }}
+    spec:
+      containers:
+      - name: {{ .Values.app.mongodb }}
+        image: {{ .Values.app.image.mongodbrepository }}:{{ .Values.app.image.tag }}
+        ports:
+        - containerPort: {{ .Values.app.mongodbcontainerPort }}
+        volumeMounts:
+        - mountPath: /data/db
+          name: mongodb-storage
+      volumes:
+      - name: mongodb-storage
+        persistentVolumeClaim:
+          claimName: mongodb-pvc
